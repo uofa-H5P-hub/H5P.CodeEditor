@@ -1,0 +1,31 @@
+{
+    "title": "Code Editor (widget)",
+    "description": "H5P Editor Code Editor Widget",
+    "majorVersion": 1,
+    "minorVersion": 0,
+    "patchVersion": 1,
+    "runnable": 0,
+    "author": "Max Iraci-Sareri",
+    "license": "cc-by-sa",
+    "machineName": "H5PEditor.CodeEditor",
+    "coreApi": {
+        "majorVersion": 1,
+        "minorVersion": 0
+    },
+    "preloadedJs": [
+        { "path": "codeeditor_widget.js" },
+        { "path": "src/codemirror/bundled/main.js" }
+    ],
+    "preloadedCss": [
+        {
+            "path": "codeeditor.css"
+        }
+    ],
+    "editorDependencies": [
+        {
+          "machineName": "FontAwesome",
+          "majorVersion": 4,
+          "minorVersion": 5
+        }
+    ]
+}

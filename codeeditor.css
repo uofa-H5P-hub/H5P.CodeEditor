@@ -1,0 +1,179 @@
+.h5p-code-editor 
+{
+    width: 100%;
+    height:auto;
+}
+
+.h5p-codeeditor>.h5p-code-editor.style-one
+{
+    box-shadow: 1px 1px 2px;
+    border: 1px solid black;
+    border-radius: 0px 6px 6px 0px;
+    width: calc(100% - 5px);
+}
+
+.h5p-codeeditor>.h5p-code-editor.style-two
+{
+    box-shadow: 2px 2px 5px inset;
+    /* padding: 6px; */
+    /* border: 1px solid black; */
+}
+
+.h5p-codeeditor>.h5p-code-editor.style-three
+{
+    /* box-shadow: 1px 1px 2px; */
+    border: none;
+    /* border-radius: 0px 0px 6px 0px; */
+    /* width: calc(100% - 2px); */
+}
+
+.h5p-codeeditor 
+{
+    width: 100%;
+    font-family: "Open Sans",sans-serif;
+    height:auto;
+}
+
+.h5p-codeeditor .title-text
+{
+    width: auto;
+    margin: 8px;
+    font-family: fantasy;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+}
+
+.h5p-codeeditor .language-text
+{
+    margin:0;
+    padding:0;
+    font-size: 1.1em;
+    background-color: #f2f2f2;
+    font-weight: 700;
+    height: 30px;
+    color: #555555;
+    text-transform: uppercase;
+    padding-left: 5px;
+    font-family:sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.h5p-codeeditor .lang::before
+{
+    left: 1.2em;
+    color: #f2f2f2;
+
+    content: "\f121";
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.3em;
+}
+
+.h5p-codeeditor .fa4icon::before
+{
+    font-family: 'H5PFontAwesome4';
+    position: absolute;
+}
+
+.h5p-codeeditor .code-settings
+{
+    background-color: #f2f2f2;
+    font-size:0.8em;
+    padding-bottom:2px;
+    font-family: "Open Sans",sans-serif;
+}
+
+.h5p-codeeditor .code-settings label
+{
+    padding-left: 8px;
+}
+
+
+.h5p-codeeditor .code-settings input, .h5p-codeeditor .code-settings select 
+{
+	margin-bottom: 4px;
+	box-shadow: inset 0px 0px 5px rgba(0,0,0,0.12);
+	padding: 5px;
+	border: 1px solid #d0d0d1;
+}
+
+.h5p-codeeditor .settings 
+{
+    float: right;
+    height: 30px;
+    width: 30px;
+	/* background-color: #ccc; */
+    cursor:pointer;
+    border:none;
+}
+
+.h5p-codeeditor .topbar 
+{
+    width:100%;
+}
+
+.h5p-codeeditor .settings::before
+{
+    content: "\f013";
+    color: #555;
+    right: 1.25em;
+    margin-top:-11px;
+
+    height: 30px;
+    font-size: 1.6em;
+}
+
+.h5p-codeeditor .lang
+{
+    float:left;
+    height: 30px;
+    width: 35px;
+    background-color: #3cc16e;
+    margin:0;
+    padding:0;
+}
+
+.h5p-codeeditor .line-numbers
+{
+    background-color: #f2f2f2;
+    float:left;
+
+    height: calc(15em);
+    width:30px;
+
+    font-family: monospace;
+    font-size: 14px;
+
+    white-space: normal;
+    line-height: 14px;
+
+    padding:0;
+    padding-top:2px;
+    margin:0;
+    margin-top:1px;
+}
+
+.h5p-codeeditor .code-window
+{
+    display: inline-block;
+
+    font-family: monospace;
+    white-space: pre;
+    line-height:14px;
+
+    font-size: 14px;
+    resize: none;
+
+    width: calc(100% - 40px);
+    height:15em;
+    border: 1px solid gray;
+}
+
+.h5p-codeeditor .code-full
+{
+    margin-left:5px;
+    width: calc(100% - 15px);
+}
