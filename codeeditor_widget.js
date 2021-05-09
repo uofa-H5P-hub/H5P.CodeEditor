@@ -10,7 +10,7 @@ H5PEditor.widgets.codeEditor = H5PEditor.CodeEditor = (function ($) {
      * @param {Object} parent
      * @param {Object} field
      * @param {string} params
-     * @param {function} setValue
+     * @param {H5PEditor.SetParameters} setValue
      */
     function CodeEditor(parent, field, params, setValue) {
         this.parent = parent;
@@ -34,7 +34,7 @@ H5PEditor.widgets.codeEditor = H5PEditor.CodeEditor = (function ($) {
         this.config.language = set_if_undef(this.config.language, "c");
         this.config.spacing = set_if_undef(this.config.spacing, 4);
         this.config.placeholder = set_if_undef(this.config.placeholder, "\n\n");
-        this.setCode(this.config.placeholder, this.config.spacing);
+        // this.setCode(this.config.placeholder, this.config.spacing);
 
         // container element
         this.$container = $("<div>", {
@@ -88,9 +88,13 @@ H5PEditor.widgets.codeEditor = H5PEditor.CodeEditor = (function ($) {
         config.toggle(false);
         topbar.appendTo(this.$container);
 
+
+        var editor_text = set_if_undef(this.params, this.config.placeholder);
+        this.setCode(editor_text, this.config.spacing);
+
         // the editor
         var editor_div = $('<div class="h5p-code-editor style-three" id="h5p-code-editor' + '"></div>');
-        this.editor = window.H5P_code_editor_make(editor_div[0], this.config.language, this.config.spacing, this.config.placeholder, this.setCode.bind(this));
+        this.editor = window.H5P_code_editor_make(editor_div[0], this.config.language, this.config.spacing, editor_text, this.setCode.bind(this));
         this.$container.append(editor_div);
 
         this.$container.appendTo($wrapper);
@@ -101,6 +105,7 @@ H5PEditor.widgets.codeEditor = H5PEditor.CodeEditor = (function ($) {
      */
     CodeEditor.prototype.setCode = function(code, spacing) {
         this.params = code;
+        this.setValue(this.field.codeEditor, this.config);
         this.setValue(this.field, this.params);
     }
     
@@ -124,8 +129,9 @@ H5PEditor.widgets.codeEditor = H5PEditor.CodeEditor = (function ($) {
     CodeEditor.prototype.validate = function () {
         //this.setCode(this.editor.state.doc.toString(), this.config.spacing);
 
-        //console.log(this.params);
-        return (typeof(this.params) == "string");
+
+        console.log("params!!!!" + this.params);
+        return true;
     };
     
     /**
