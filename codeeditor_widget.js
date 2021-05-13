@@ -34,22 +34,15 @@ H5PEditor.widgets.codeEditor = H5PEditor.CodeEditor = (function ($) {
         this.config.language = set_if_undef(this.config.language, "c");
         this.config.spacing = set_if_undef(this.config.spacing, 4);
         this.config.placeholder = set_if_undef(this.config.placeholder, "\n\n");
-        // this.setCode(this.config.placeholder, this.config.spacing);
 
         // container element
         this.$container = $("<div>", {
             'class': "field text h5p-codeeditor"
         });
         // Add header:
-        $('<span>', {
-            'class': 'h5peditor-label',
-            html: this.field.label
-        }).appendTo(this.$container);
+        $('<span>', { 'class': 'h5peditor-label', html: this.field.label}).appendTo(this.$container);
         // Add description:
-        $('<div>', {
-            'class': 'h5peditor-field-description',
-            html: this.field.description
-        }).appendTo(this.$container);
+        $('<div>', { 'class': 'h5peditor-field-description', html: this.field.description}).appendTo(this.$container);
 
         //config
         var config = $("<aside>", {'class':'h5p-codeeditor code-settings'});
@@ -112,6 +105,7 @@ H5PEditor.widgets.codeEditor = H5PEditor.CodeEditor = (function ($) {
     CodeEditor.prototype.updateLanguage = function(language) {
         this.config.language = $(language).val();
         this.langtext.html(this.config.language);
+        this.field.codeEditor.language = this.config.language;
 
         window.H5P_code_editor_changelang(this.editor, $(language).val());
     }
@@ -128,10 +122,7 @@ H5PEditor.widgets.codeEditor = H5PEditor.CodeEditor = (function ($) {
      */
     CodeEditor.prototype.validate = function () {
         //this.setCode(this.editor.state.doc.toString(), this.config.spacing);
-
-
-        console.log("params!!!!" + this.params);
-        return true;
+        return this.params.length >= 0;
     };
     
     /**
